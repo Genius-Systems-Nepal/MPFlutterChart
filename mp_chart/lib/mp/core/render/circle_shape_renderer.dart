@@ -11,26 +11,26 @@ class CircleShapeRenderer implements IShapeRenderer {
   void renderShape(
       Canvas c,
       IScatterDataSet dataSet,
-      ViewPortHandler viewPortHandler,
-      double posX,
-      double posY,
-      Paint renderPaint) {
-    final double shapeSize = dataSet.getScatterShapeSize();
+      ViewPortHandler? viewPortHandler,
+      double? posX,
+      double? posY,
+      Paint? renderPaint) {
+    final double shapeSize = dataSet.getScatterShapeSize()!;
     final double shapeHalf = shapeSize / 2;
     final double shapeHoleSizeHalf =
-        Utils.convertDpToPixel(dataSet.getScatterShapeHoleRadius());
+        Utils.convertDpToPixel(dataSet.getScatterShapeHoleRadius())!;
     final double shapeHoleSize = shapeHoleSizeHalf * 2.0;
     final double shapeStrokeSize = (shapeSize - shapeHoleSize) / 2.0;
     final double shapeStrokeSizeHalf = shapeStrokeSize / 2.0;
 
-    final Color shapeHoleColor = dataSet.getScatterShapeHoleColor();
+    final Color shapeHoleColor = dataSet.getScatterShapeHoleColor()!;
 
     if (shapeSize > 0.0) {
-      renderPaint
+      renderPaint!
         ..style = PaintingStyle.stroke
         ..strokeWidth = shapeStrokeSize;
 
-      c.drawCircle(Offset(posX, posY), shapeHoleSizeHalf + shapeStrokeSizeHalf,
+      c.drawCircle(Offset(posX!, posY!), shapeHoleSizeHalf + shapeStrokeSizeHalf,
           renderPaint);
 
       if (shapeHoleColor != ColorUtils.COLOR_NONE) {
@@ -41,9 +41,9 @@ class CircleShapeRenderer implements IShapeRenderer {
         c.drawCircle(Offset(posX, posY), shapeHoleSizeHalf, renderPaint);
       }
     } else {
-      renderPaint.style = PaintingStyle.fill;
+      renderPaint!.style = PaintingStyle.fill;
 
-      c.drawCircle(Offset(posX, posY), shapeHalf, renderPaint);
+      c.drawCircle(Offset(posX!, posY!), shapeHalf, renderPaint);
     }
   }
 }

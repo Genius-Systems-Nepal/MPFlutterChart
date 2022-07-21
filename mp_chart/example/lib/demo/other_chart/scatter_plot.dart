@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:math';
 import 'dart:ui' as ui;
 
@@ -174,9 +176,9 @@ class OtherChartScatterPlotState
     imgs[1] = await ImageLoader.loadImage('assets/img/add.png');
     imgs[2] = await ImageLoader.loadImage('assets/img/close.png');
 
-    List<Entry> values1 = List();
-    List<Entry> values2 = List();
-    List<Entry> values3 = List();
+    List<Entry> values1 = [];
+    List<Entry> values2 = [];
+    List<Entry> values3 = [];
 
     for (int i = 0; i < count; i++) {
       double val = (random.nextDouble() * range) + 3;
@@ -210,7 +212,7 @@ class OtherChartScatterPlotState
     set2.setScatterShapeSize(8);
     set3.setScatterShapeSize(8);
 
-    List<IScatterDataSet> dataSets = List();
+    List<IScatterDataSet> dataSets = [];
     dataSets.add(set1); // add the data sets
     dataSets.add(set2);
     dataSets.add(set3);

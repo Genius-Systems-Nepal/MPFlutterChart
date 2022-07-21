@@ -9,86 +9,86 @@ import 'package:mp_chart/mp/core/enums/rounding.dart';
 import 'package:mp_chart/mp/core/poolable/point.dart';
 import 'package:mp_chart/mp/core/value_formatter/value_formatter.dart';
 
-mixin IDataSet<T extends Entry> {
-  double getYMin();
+mixin IDataSet<T extends Entry?> {
+  double? getYMin();
 
-  double getYMax();
+  double? getYMax();
 
-  double getXMin();
+  double? getXMin();
 
-  double getXMax();
+  double? getXMax();
 
-  int getEntryCount();
+  int? getEntryCount();
 
   void calcMinMax();
 
   void calcMinMaxY(double fromX, double toX);
 
-  T getEntryForXValue1(double xValue, double closestToY, Rounding rounding);
+  T? getEntryForXValue1(double? xValue, double closestToY, Rounding rounding);
 
-  T getEntryForXValue2(double xValue, double closestToY);
+  T? getEntryForXValue2(double? xValue, double? closestToY);
 
-  List<T> getEntriesForXValue(double xValue);
+  List<T>? getEntriesForXValue(double? xValue);
 
-  T getEntryForIndex(int index);
+  T? getEntryForIndex(int? index);
 
-  int getEntryIndex1(double xValue, double closestToY, Rounding rounding);
+  int? getEntryIndex1(double xValue, double closestToY, Rounding rounding);
 
-  int getEntryIndex2(T e);
+  int? getEntryIndex2(T e);
 
-  int getIndexInEntries(int xIndex);
+  int? getIndexInEntries(int xIndex);
 
-  bool addEntry(T e);
+  bool? addEntry(T e);
 
-  bool addEntryByIndex(int index, T e);
+  bool? addEntryByIndex(int index, T e);
 
-  bool updateEntryByIndex(int index, T e);
+  bool? updateEntryByIndex(int index, T e);
 
   void addEntryOrdered(T e);
 
-  bool removeFirst();
+  bool? removeFirst();
 
-  bool removeLast();
+  bool? removeLast();
 
-  bool removeEntry1(T e);
+  bool? removeEntry1(T e);
 
-  bool removeEntryByXValue(double xValue);
+  bool? removeEntryByXValue(double xValue);
 
-  bool removeEntry2(int index);
+  bool? removeEntry2(int index);
 
-  bool contains(T entry);
+  bool? contains(T entry);
 
   void clear();
 
-  String getLabel();
+  String? getLabel();
 
   void setLabel(String label);
 
-  AxisDependency getAxisDependency();
+  AxisDependency? getAxisDependency();
 
   void setAxisDependency(AxisDependency dependency);
 
-  List<ui.Color> getColors();
+  List<ui.Color>? getColors();
 
   ui.Color getColor1();
 
-  GradientColor getGradientColor1();
+  GradientColor? getGradientColor1();
 
-  List<GradientColor> getGradientColors();
+  List<GradientColor>? getGradientColors();
 
-  GradientColor getGradientColor2(int index);
+  GradientColor? getGradientColor2(int index);
 
   ui.Color getColor2(int index);
 
-  bool isHighlightEnabled();
+  bool? isHighlightEnabled();
 
   void setHighlightEnabled(bool enabled);
 
   void setValueFormatter(ValueFormatter f);
 
-  ValueFormatter getValueFormatter();
+  ValueFormatter? getValueFormatter();
 
-  bool needsFormatter();
+  bool? needsFormatter();
 
   void setValueTextColor(ui.Color color);
 
@@ -102,25 +102,25 @@ mixin IDataSet<T extends Entry> {
 
   ui.Color getValueTextColor2(int index);
 
-  TypeFace getValueTypeface();
+  TypeFace? getValueTypeface();
 
-  double getValueTextSize();
+  double? getValueTextSize();
 
   LegendForm getForm();
 
-  double getFormSize();
+  double? getFormSize();
 
-  double getFormLineWidth();
+  double? getFormLineWidth();
 
-  DashPathEffect getFormLineDashEffect();
+  DashPathEffect? getFormLineDashEffect();
 
   void setDrawValues(bool enabled);
 
-  bool isDrawValuesEnabled();
+  bool? isDrawValuesEnabled();
 
   void setDrawIcons(bool enabled);
 
-  bool isDrawIconsEnabled();
+  bool? isDrawIconsEnabled();
 
   void setIconsOffset(MPPointF offset);
 
@@ -128,5 +128,5 @@ mixin IDataSet<T extends Entry> {
 
   void setVisible(bool visible);
 
-  bool isVisible();
+  bool? isVisible();
 }

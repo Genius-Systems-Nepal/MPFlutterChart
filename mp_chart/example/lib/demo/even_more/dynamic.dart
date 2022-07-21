@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mp_chart/mp/chart/line_chart.dart';
 import 'package:mp_chart/mp/controller/line_chart_controller.dart';
 import 'package:mp_chart/mp/core/common_interfaces.dart';
@@ -198,7 +197,7 @@ class EvenMoreDynamicState extends ActionState<EvenMoreDynamic>
     } else {
       int count = (data.getDataSetCount() + 1);
       int amount = data.getDataSetByIndex(0).getEntryCount();
-      List<Entry> values = List();
+      List<Entry> values = [];
       for (int i = 0; i < amount; i++) {
         values.add(new Entry(
             x: i.toDouble(), y: (random.nextDouble() * 50) + 50 * count));

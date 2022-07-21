@@ -12,29 +12,31 @@ description: flutter charts just like MPAndroidChart
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.1
+publish_to : none
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
-  url_launcher: ^5.1.3
-  permission_handler: ^3.2.0
+  url_launcher: ^6.1.5
+  permission_handler: ^10.0.0
   flutter:
     sdk: flutter
-  mp_chart: ^0.2.2
+  mp_chart:
+    path: ./mp_chart
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.5
 
-  intl: ^0.17.0-nullsafety.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-dependency_overrides:
-  mp_chart:
-    path : ../
+# dependency_overrides:
+#   mp_chart:
+#     path : ../
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
