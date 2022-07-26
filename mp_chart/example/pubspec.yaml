@@ -23,7 +23,7 @@ dependencies:
   flutter:
     sdk: flutter
   mp_chart:
-    path: /home/shiva/Desktop/migration_np_flutter_3_0_0/mp_chart/mp_chart
+    path: ../
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
